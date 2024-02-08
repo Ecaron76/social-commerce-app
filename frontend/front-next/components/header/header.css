@@ -1,0 +1,180 @@
+.header {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.left-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6600;
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+    cursor: pointer;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #ff6600;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.sell-button,
+.signuplogin {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sell-button {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+/* Styles spécifiques pour chaque élément dans user-actions */
+.user-actions .favorites {
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.user-actions .favorites:hover {
+    color: #ff6600;
+}
+
+.user-actions .messages {
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.user-actions .messages:hover {
+    color: #ff6600;
+}
+
+.signuplogin {
+    cursor: pointer;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signuplogin:hover {
+    color: #ff6600;
+}
+/* Styles pour la barre de recherche */
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0px 0px 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search input:focus {
+    border-color: #ff6600; /* Couleur de bordure lorsqu'il est en focus */
+}
+
+.search button {
+    padding: 12px 24px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search button:hover {
+    background-color: #ff5500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère au survol */
+}
+.favmes{
+    display: flex;
+    gap: 10px;
+
+}
+.favmes div {
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.favmes div::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #ff6600;
+    transition: width 0.3s ease;
+}
+
+.favmes div:hover::before {
+    width: 100%;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10% 15px 10%;
+}
+
+.categories-header{
+    padding: 30px;
+    display: flex ;
+    background-color: #2b2a2a;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.categories-header div {
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.categories-header div::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #ff6600;
+    transition: width 0.3s ease;
+}
+
+.categories-header div:hover::before {
+    width: 100%;
+}
