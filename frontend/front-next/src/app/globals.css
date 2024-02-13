@@ -221,4 +221,32 @@
   padding: 15px;
   color: #333;
 }
+.interactive-map {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px; /* Augmenter la marge pour plus d'espace */
+}
 
+.interactive-map h2 {
+  font-size: 36px; /* Augmenter la taille de la police */
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.interactive-map iframe {
+  width: 80%; /* Ajuster la largeur pour une meilleure proportion */
+  max-width: 800px; /* Limiter la largeur maximale pour une meilleure responsivité */
+  height: 500px; /* Ajuster la hauteur pour une meilleure proportion */
+  border: none;
+  border-radius: 16px; /* Augmenter le rayon de la bordure pour plus de douceur */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Améliorer l'ombre pour plus de profondeur */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajouter une transition pour un effet de survol */
+}
+
+.interactive-map iframe:hover {
+  transform: translateY(-8px); /* Effet de survol légèrement plus élevé */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Accentuer l'ombre au survol */
+}
