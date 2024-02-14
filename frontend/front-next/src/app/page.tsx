@@ -4,6 +4,7 @@ import Header from "../../components/header/Header";
 import PageContainer from "../../components/pagecontainer/PageContainer";
 import Footer from "../../components/footer/Footer";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -82,6 +83,7 @@ export default function Home() {
               <img src="lien_image_categorie1.jpg" alt="Catégorie 1" />
               <h3>Électronique</h3>
             </div>
+
             <div className="category-card">
               <img src="lien_image_categorie2.jpg" alt="Catégorie 2" />
               <h3>Jouets et jeux</h3>
