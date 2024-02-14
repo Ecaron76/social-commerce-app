@@ -1,43 +1,48 @@
-/* Ajoutez ces styles à votre fichier CSS en remplaçant les couleurs par celles de votre site */
 .categoriesSection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .categoryCard {
-    cursor: pointer;
-    width: 30%;
-    height: 200px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px;
-    text-align: center;
-    transition: box-shadow 0.3s ease;
-    background-color: #f5f5f5; /* Couleur de fond */
-  }
-  
-  .categoryCard:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .categoryCard h3 {
-    font-size: 18px;
-    color: #333; /* Couleur principale */
-    margin-bottom: 10px;
-  }
-  
-  .categoryCard p {
-    font-size: 14px;
-    color: #666; /* Couleur secondaire */
-  }
-  
-  /* Ajoutez des couleurs différentes pour chaque catégorie */
-  
-  
-  
-  
-  /* Ajoutez d'autres styles ou ajustez selon vos préférences */
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.categoryCard {
+  position: relative;
+  width: 30%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoryContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour améliorer la lisibilité du texte */
+  border-radius: 0 0 12px 12px;
+  color: #fff;
+}
+
+.categoryContent h3 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.categoryContent p {
+  font-size: 14px;
+  margin: 0;
+}
+.nbprod{
+  font-weight: bold;
+  font-size: 16px!important;
+  color: #e67c35;
+}

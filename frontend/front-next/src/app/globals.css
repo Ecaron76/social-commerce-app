@@ -177,6 +177,7 @@
 /* Styles pour la section "Catégories Populaires" */
 /* Styles améliorés pour la section "Catégories Populaires" */
 .popular-categories {
+  
   padding: 40px 0;
   text-align: center;
 }
@@ -199,6 +200,7 @@
   margin-bottom: 20px;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
+  background-color: #2b2a2a;;
   overflow: hidden;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -219,7 +221,8 @@
 .category-card h3 {
   font-size: 20px;
   padding: 15px;
-  color: #333;
+  color: #f78235;
+  font-weight: bold;
 }
 .interactive-map {
   display: flex;

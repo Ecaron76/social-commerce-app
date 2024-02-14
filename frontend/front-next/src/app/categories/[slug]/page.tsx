@@ -49,7 +49,10 @@ export default function CategoryPage({ params }: Props ) {
                     alt={`Bannière de la catégorie ${category.name}`}
                 />
                 <div className='bannerContent'>
-                    <h1>{category.name}</h1>
+                    <div className='infoCategory'>
+                      <h1>{category.name}</h1>
+                      <p>25 produits en vente</p>
+                    </div>
                     <p>{category.description}</p>
                 </div>
             </div>

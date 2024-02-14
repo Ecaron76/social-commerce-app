@@ -5,6 +5,8 @@ import Header from "../../../components/header/Header"
 import PageContainer from "../../../components/pagecontainer/PageContainer"
 import React, { useEffect, useState } from 'react';
 import { Category } from '@/models/category'
+import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function CategoriesPage() {
@@ -35,8 +37,20 @@ export default function CategoriesPage() {
                 <section className="categoriesSection">
                     {categories.map((category) => (
                         <div key={category.id} className="categoryCard">
-                            <h3>{category.name}</h3>
-                            <p>10 produits en ventes</p>
+                            <Link href={`categories/${category.slug}`}>
+                            <Image
+                                className='categoryImage'
+                                sizes='100vw'
+                                width={0}
+                                height={0}
+                                src={`/assets/images/category/${category.image}`}
+                                alt={`Bannière de la catégorie ${category.name}`}
+                            />
+                            <div className='categoryContent'>
+                                <h3>{category.name}</h3>
+                                <p className='nbprod'>10 produits en ventes</p>
+                            </div>
+                            </Link>
                         </div>
                     ))}
                 </section>
