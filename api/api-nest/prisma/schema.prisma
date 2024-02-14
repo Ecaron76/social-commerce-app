@@ -7,8 +7,10 @@ datasource db {
 }
 
 model Category {
-  id          Int    @id @default(autoincrement())
-  name        String @db.VarChar(100)
-  slug        String @db.VarChar(100)
-  description String @db.VarChar(300)
+  id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(100)
+  slug        String  @db.VarChar(100)
+  description String  @db.VarChar(300)
+  image       String? @db.VarChar(255) 
+
 }

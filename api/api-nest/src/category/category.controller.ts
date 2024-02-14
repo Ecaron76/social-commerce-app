@@ -10,8 +10,8 @@ export class CategoryController {
         return this.categoryService.getAllCategories();
     }
 
-    @Get(':id')
-    getOneProduct(@Param("slug") categorySlug: string) {
+    @Get(':slug')
+    getOneCategory(@Param("slug") categorySlug: string) {
         return this.categoryService.getOneCategory(categorySlug);
     }
 }
