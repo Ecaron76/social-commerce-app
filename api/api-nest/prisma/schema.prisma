@@ -1,16 +1,78 @@
 generator client {
   provider = "prisma-client-js"
 }
+
 datasource db {
   provider = "postgres"
-  url = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 model Category {
-  id          Int     @id @default(autoincrement())
+  categoryId  Int     @id @default(autoincrement())
   name        String  @db.VarChar(100)
   slug        String  @db.VarChar(100)
   description String  @db.VarChar(300)
-  image       String? @db.VarChar(255) 
+  image       String?
 
+  products Product[]
+}
+
+model Product {
+  productId   Int     @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  state       String
+  sellerId    Int
+  categoryId  Int
+  image       String?
+
+  seller      User     @relation(fields: [sellerId], references: [userId])
+  category    Category @relation(fields: [categoryId], references: [categoryId])
+  orders      Order[]
+  favoritedBy User[]   @relation("FavoriteProducts")
+}
+
+model Order {
+  orderId Int @id @default(autoincrement())
+  userId  Int
+
+  productId Int
+  product   Product @relation(fields: [productId], references: [productId])
+
+  @@unique([userId, productId])
+}
+
+model User {
+  userId   Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+
+  profile          Profile?
+  products         Product[]
+  sentMessages     Message[] @relation("SenderMessages")
+  receivedMessages Message[] @relation("ReceiverMessages")
+  favoriteProducts Product[] @relation("FavoriteProducts")
+}
+
+model Profile {
+  profileId  Int     @id @default(autoincrement())
+  firstName  String
+  lastName   String
+  ville      String?
+  codePostal String?
+  bio        String?
+  image      String?
+  user       User    @relation(fields: [userId], references: [userId])
+  userId     Int     @unique
+}
+
+model Message {
+  messageId  Int      @id @default(autoincrement())
+  content    String
+  senderId   Int
+  receiverId Int
+  createdAt  DateTime @default(now())
+  sender     User     @relation("SenderMessages", fields: [senderId], references: [userId])
+  receiver   User     @relation("ReceiverMessages", fields: [receiverId], references: [userId])
 }

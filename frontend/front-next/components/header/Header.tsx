@@ -39,7 +39,9 @@ export default function Header() {
                         <div className='favorites'>Favoris</div>
                         <div className='messages'>Messages</div>
                     </div>
-                    <div className="signuplogin">Signup/Login</div>
+                    <Link href={"/login"}>
+                        <div className="signuplogin">Se connecter</div>
+                    </Link>
                 </div>
             </div>
             <div className='categories-header'>

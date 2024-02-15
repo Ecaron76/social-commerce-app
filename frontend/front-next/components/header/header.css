@@ -70,8 +70,9 @@
 }
 
 .signuplogin {
+    background-color: #555;
     cursor: pointer;
-    color: #555;
+    color: white;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -177,4 +178,11 @@
 
 .categories-header div:hover::before {
     width: 100%;
+}
+
+.sell-button:hover {
+    color: #ff6600 ;
+    background-color: white;
+    border: solid 1px #ff6600 ;
+    font-weight: bold;    
 }
