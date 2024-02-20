@@ -3,9 +3,9 @@ import { AuthGuard } from '@nestjs/passport';
 import { ProfileService } from './profile.service';
 import { CreateProfileDto } from 'dto/profile/createProfileDto';
 import { UpdateProfileDto } from 'dto/profile/updateProfileDto';
+import { JwtGuard } from 'src/auth/guards/jwt.guard';
 
 @Controller('profile')
-@UseGuards(AuthGuard('jwt'))
 export class ProfileController {
     constructor(private readonly profileService: ProfileService) {}
 
@@ -21,9 +21,10 @@ export class ProfileController {
       return this.profileService.updateProfile(userId, updateProfileDto);
     }
     
+    @UseGuards(JwtGuard)
     @Get('/user')
     async getProfileByUserId(@Request() req){
-      const userId = req.user.userId;
+      const userId = req.user.sub;
       return this.profileService.getProfileByUserId(userId)
     }
 }

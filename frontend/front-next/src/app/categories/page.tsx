@@ -15,13 +15,13 @@ export default function CategoriesPage() {
  
     useEffect(() => {
         const fetchCategories = async () => {
-        try {
-            const response = await fetch('http://localhost:8000/category');
-            const data = await response.json();
-            setCategories(data);
-        } catch (error) {
-            console.error('Erreur lors de la récupération des catégories:', error);
-        }
+            try {
+                const response = await fetch('http://localhost:8000/category');
+                const data = await response.json();
+                setCategories(data);
+            } catch (error) {
+                console.error('Erreur lors de la récupération des catégories:', error);
+            }
         };
 
         fetchCategories();
