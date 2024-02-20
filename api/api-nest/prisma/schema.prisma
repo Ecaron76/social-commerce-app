@@ -56,15 +56,18 @@ model User {
 }
 
 model Profile {
-  profileId  Int     @id @default(autoincrement())
+  profileId  Int       @id @default(autoincrement())
+  pseudo     String    
   firstName  String
   lastName   String
+  dateNais   DateTime?
+  genre      String   @default("Autre")
   ville      String?
   codePostal String?
   bio        String?
   image      String?
-  user       User    @relation(fields: [userId], references: [userId])
-  userId     Int     @unique
+  user       User      @relation(fields: [userId], references: [userId])
+  userId     Int       @unique
 }
 
 model Message {

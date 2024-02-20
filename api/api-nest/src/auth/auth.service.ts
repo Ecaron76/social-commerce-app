@@ -39,6 +39,7 @@ export class AuthService {
             expiresIn:"24h", 
             secret: this.configService.get("SECRET_KEY")
         })
+        
         return {
             token, 
             user: {

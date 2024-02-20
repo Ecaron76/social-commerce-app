@@ -39,7 +39,7 @@ export default function CategoryPage({ params }: Props ) {
             <Header />
             <PageContainer>
             {category && (
-            <div className='bannerContainer'>
+            <div className='bannerContainer'key={category.id}>
                 <Image
                     className='bannerImage'
                     sizes='100vw'

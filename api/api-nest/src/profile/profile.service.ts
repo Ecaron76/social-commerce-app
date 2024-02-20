@@ -40,4 +40,16 @@ export class ProfileService {
 
     return updatedProfile;
   }
+
+  async  getProfileByUserId(userId: number){
+    const profile = await this.prismaService.profile.findUnique({
+      where: {
+        userId: userId,
+      },
+    });
+    if(!profile){
+      throw new NotFoundException('Profil introuvable');
+    }
+    return profile
+  }
 }

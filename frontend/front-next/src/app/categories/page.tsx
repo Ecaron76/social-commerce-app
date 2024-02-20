@@ -36,7 +36,7 @@ export default function CategoriesPage() {
             <PageContainer>
                 <section className="categoriesSection">
                     {categories.map((category) => (
-                        <div key={category.id} className="categoryCard">
+                        <div key={category.slug} className="categoryCard">
                             <Link href={`categories/${category.slug}`}>
                             <Image
                                 className='categoryImage'

@@ -1,4 +1,4 @@
-import { Body, Controller, Post,Patch, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Post,Get,Patch, Request, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ProfileService } from './profile.service';
 import { CreateProfileDto } from 'dto/profile/createProfileDto';
@@ -19,5 +19,11 @@ export class ProfileController {
     async updateProfile(@Request() req, @Body() updateProfileDto: UpdateProfileDto) {
       const userId = req.user.userId;
       return this.profileService.updateProfile(userId, updateProfileDto);
+    }
+    
+    @Get('/user')
+    async getProfileByUserId(@Request() req){
+      const userId = req.user.userId;
+      return this.profileService.getProfileByUserId(userId)
     }
 }

@@ -14,6 +14,7 @@ export default function Header() {
                 }
                 const data: Category[] = await response.json();
                 setCategories(data);
+                console.log(data)
             } catch (error) {
                 console.error('Erreur lors de la récupération des catégories:', error);
             }
@@ -46,7 +47,7 @@ export default function Header() {
             </div>
             <div className='categories-header'>
                 {categories.map((category) => (
-                    <Link key={category.id} href={`/categories/${category.slug}`}>
+                    <Link key={category.slug} href={`/categories/${category.slug}`}>
                         <div>{category.name}</div>
                     </Link>
                 ))}
