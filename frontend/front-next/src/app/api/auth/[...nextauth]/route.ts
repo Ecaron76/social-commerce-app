@@ -1,4 +1,4 @@
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, getServerSession } from "next-auth";
 import CrendentialsProvider from "next-auth/providers/credentials"
 import NextAuth from "next-auth"
 import { JWT } from "next-auth/jwt";
@@ -78,7 +78,7 @@ export const authOptions: NextAuthOptions = {
         }
     }
 }
-
+export const getAuthSession = () => getServerSession(authOptions)
 const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST }
